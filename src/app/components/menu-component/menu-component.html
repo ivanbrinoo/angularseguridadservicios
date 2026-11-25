@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom py-3 sticky-top">
+  <div class="container">
+    <!-- Marca con insignia sutil -->
+    <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="#">
+      <span class="badge bg-dark rounded-2 px-2 py-1">N</span>
+      <span>Navbar</span>
+    </a>
+
+    <!-- Botón móvil -->
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Enlaces -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold text-dark border-bottom border-2 border-dark pb-1" aria-current="page" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold text-dark border-bottom border-2 border-dark pb-1" aria-current="page" [routerLink]="['/empleados']">Empleados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu border-0 shadow rounded-3 p-2 mt-2">
+            <li><a class="dropdown-item rounded-2 py-2" href="#">Action</a></li>
+            <li><a class="dropdown-item rounded-2 py-2" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item rounded-2 py-2" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+
+      <!-- Buscador minimalista -->
+      <form class="d-flex" role="search">
+        <div class="input-group">
+          <input class="form-control bg-light border-0 rounded-start-pill ps-3 shadow-none" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-dark rounded-end-pill px-4 fw-medium" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
