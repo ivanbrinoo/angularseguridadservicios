@@ -1,0 +1,35 @@
+<div class="perfil-container">
+  @if (empleado) {
+    <div class="perfil-card">
+      <div class="perfil-header">
+        <div class="avatar">
+          {{ empleado.apellido.charAt(0) }}
+        </div>
+        <h3>Mi Perfil</h3>
+        <span class="badge-oficio">{{ empleado.oficio }}</span>
+      </div>
+
+      <div class="perfil-body">
+        <div class="dato-item">
+          <span class="etiqueta">ID Empleado</span>
+          <span class="valor">#{{ empleado.idEmpleado }}</span>
+        </div>
+
+        <div class="dato-item">
+          <span class="etiqueta">Apellido</span>
+          <span class="valor">{{ empleado.apellido }}</span>
+        </div>
+
+        <div class="dato-item">
+          <span class="etiqueta">Oficio</span>
+          <span class="valor">{{ empleado.oficio }}</span>
+        </div>
+
+        <div class="dato-item">
+          <span class="etiqueta">Departamento</span>
+          <span class="valor">Depto. {{ empleado.idDepartamento }}</span>
+        </div>
+      </div>
+    </div>
+  }
+</div>
