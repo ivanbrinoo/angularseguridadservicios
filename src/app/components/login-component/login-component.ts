@@ -21,8 +21,13 @@ export class LoginComponent {
     let usuario = this.cajausuario.nativeElement.value
     let password = this.cajapassword.nativeElement.value
     let login = new Login(usuario, password )
-    await this._service.loginPerfilAsync(login)
-    this.mensaje = "Usuario correcto"
+    try {
+      let token = await this._service.loginPerfilAsync(login)
+      this.mensaje = "Usuario correcto"
+      localStorage.setItem("TOKEN", token)    
+    }catch(error) {
+      this.mensaje = "Usuario/Password incorrecto"
+    }
     this._cdr.detectChanges()
     }
 }

@@ -1,35 +1,35 @@
-<div class="perfil-container">
+<div class="perfil-container d-flex justify-content-center align-items-center min-vh-100 bg-light">
   @if (empleado) {
-    <div class="perfil-card">
-      <div class="perfil-header">
-        <div class="avatar">
-          {{ empleado.apellido.charAt(0) }}
+    <div class="card shadow-sm border-0 rounded-4 overflow-hidden" style="width: 22rem;">
+      
+      <!-- Cabecera con degradado y avatar generado con la inicial -->
+      <div class="card-header bg-primary bg-gradient text-white text-center py-4 border-0">
+        <div class="rounded-circle bg-white text-primary fw-bold d-inline-flex align-items-center justify-content-center mb-2 shadow-sm" 
+             style="width: 64px; height: 64px; font-size: 1.5rem;">
+          {{ empleado.apellido.charAt(0).toUpperCase() }}
         </div>
-        <h3>Mi Perfil</h3>
-        <span class="badge-oficio">{{ empleado.oficio }}</span>
+        <h5 class="card-title mb-1 fw-bold">{{ empleado.apellido }}</h5>
+        <span class="badge bg-light text-primary rounded-pill px-3 py-1">
+          {{ empleado.oficio }}
+        </span>
       </div>
 
-      <div class="perfil-body">
-        <div class="dato-item">
-          <span class="etiqueta">ID Empleado</span>
-          <span class="valor">#{{ empleado.idEmpleado }}</span>
-        </div>
-
-        <div class="dato-item">
-          <span class="etiqueta">Apellido</span>
-          <span class="valor">{{ empleado.apellido }}</span>
-        </div>
-
-        <div class="dato-item">
-          <span class="etiqueta">Oficio</span>
-          <span class="valor">{{ empleado.oficio }}</span>
-        </div>
-
-        <div class="dato-item">
-          <span class="etiqueta">Departamento</span>
-          <span class="valor">Depto. {{ empleado.idDepartamento }}</span>
-        </div>
+      <!-- Cuerpo con los detalles estructurados -->
+      <div class="card-body p-4">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+            <span class="text-muted small fw-semibold text-uppercase">ID Empleado</span>
+            <span class="fw-bold text-dark">#{{ empleado.idEmpleado }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+            <span class="text-muted small fw-semibold text-uppercase">Departamento</span>
+            <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill px-3 py-2">
+              Depto. {{ empleado.idDepartamento }}
+            </span>
+          </li>
+        </ul>
       </div>
+
     </div>
   }
 </div>
